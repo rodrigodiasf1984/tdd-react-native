@@ -8505,12 +8505,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-native-get-location@npm:2.0.0":
-  version: 2.0.0
-  resolution: "react-native-get-location@npm:2.0.0"
+"react-native-get-location@npm:^5.0.0":
+  version: 5.0.0
+  resolution: "react-native-get-location@npm:5.0.0"
   peerDependencies:
-    react-native: ">=0.44"
-  checksum: 81833ba9d5707f1289b74573c517cf44c4c42714d0e8ff9ca06a04e4747de1972edad46373b57ddbaa6a06013e006a8702c5fb494349ef4ee4e7b0c0beb9db51
+    react-native: ">=0.60"
+  checksum: 69447e1605eae56c9d39844af46d23f74dffc06d376f243226174ae9ff924eb5a20e6b28998d48b7b5b94fd85485ab5d5e53a4d8272d58f56fbce406ecd1d871
   languageName: node
   linkType: hard
 
@@ -9745,7 +9745,7 @@ __metadata:
     react-hook-form: 6.15.1
     react-native: 0.75.2
     react-native-gesture-handler: 1.9.0
-    react-native-get-location: 2.0.0
+    react-native-get-location: ^5.0.0
     react-native-linear-gradient: 2.5.6
     react-native-reanimated: 1.13.2
     react-native-safe-area-context: 3.1.9

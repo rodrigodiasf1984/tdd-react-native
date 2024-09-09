@@ -7,4 +7,8 @@ describe('WheatherCurrent', () => {
     render(<WheatherCurrent />);
     expect(screen.getByTestId('wheather-current')).toBeDefined();
   });
+
+  it('should navigate to the Weather screen with the location', () => {
+    throw new Error('Test not implemented');
+  });
 });
