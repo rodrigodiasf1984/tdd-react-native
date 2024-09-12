@@ -1,18 +1,15 @@
 import GetLocation from 'react-native-get-location';
 
+jest.mock('react-native-get-location', () => ({
+  getCurrentPosition: jest.fn().mockResolvedValue({latitude: 0, longitude: 0}),
+}));
+
 class LocationService {
   static async getCurrentPosition() {
     return GetLocation.getCurrentPosition({
       enableHighAccuracy: true,
-      timeout: 60000,
-    })
-      .then(location => {
-        console.log(location);
-      })
-      .catch(error => {
-        const {code, message} = error;
-        console.warn(code, message);
-      });
+      timeout: 15000,
+    }).then(({latitude, longitude}) => ({latitude, longitude}));
   }
 }
 
