@@ -1,12 +1,12 @@
 import {Text, View} from 'react-native';
 import React from 'react';
 
-const WheatherScreen = () => {
+const WeatherScreen = () => {
   return (
     <View testID="wheather-screen">
-      <Text>WheatherScreen</Text>
+      <Text>WeatherScreen</Text>
     </View>
   );
 };
 
-export default WheatherScreen;
+export default WeatherScreen;

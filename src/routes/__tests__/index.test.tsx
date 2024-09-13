@@ -5,8 +5,8 @@ import {View} from 'react-native';
 
 import AppNavigator from '..';
 import HomeScreen from '../../screens/HomeScreen';
-import WeatherScreen from '../../screens/WeatherScreen';
 import {NavigationProps} from '../../types/navigation';
+import WeatherScreen from '../../screens/WeatherScreen';
 
 jest.mock('../../screens/HomeScreen', () => jest.fn());
 jest.mock('../../screens/WeatherScreen', () => jest.fn());

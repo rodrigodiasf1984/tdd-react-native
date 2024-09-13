@@ -2,7 +2,7 @@ import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import {NavigationContainer} from '@react-navigation/native';
 import HomeScreen from '../screens/HomeScreen';
-import WheatherScreen from '../screens/WeatherScreen';
+import WeatherScreen from '../screens/WeatherScreen';
 
 export type RootStackParamList = {
   Home: undefined;
@@ -16,7 +16,7 @@ const AppNavigator = () => {
     <NavigationContainer>
       <RootStack.Navigator screenOptions={{headerShown: false}}>
         <RootStack.Screen name="Home" component={HomeScreen} />
-        <RootStack.Screen name="Weather" component={WheatherScreen} />
+        <RootStack.Screen name="Weather" component={WeatherScreen} />
       </RootStack.Navigator>
     </NavigationContainer>
   );
