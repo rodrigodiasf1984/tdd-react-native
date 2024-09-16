@@ -73,11 +73,11 @@ describe('WheatherCurrent', () => {
     it('Should not rendered the loader when position is fetched', async () => {
       render(<WheatherCurrent />);
       const button = screen.getByTestId('wheather-current');
-      fireEvent.press(button);
 
       await waitFor(() => {
-        return expect(screen.findByTestId('button-loading')).rejects.toThrow();
+        fireEvent.press(button);
       });
+      return expect(screen.findByTestId('button-loading')).rejects.toThrow();
     });
 
     it('should not render the loader when fetching position has failed', async () => {
@@ -87,11 +87,11 @@ describe('WheatherCurrent', () => {
 
       render(<WheatherCurrent />);
       const button = screen.getByTestId('wheather-current');
-      fireEvent.press(button);
-
       await waitFor(() => {
-        return expect(screen.findByTestId('button-loading')).rejects.toThrow();
+        fireEvent.press(button);
       });
+
+      return expect(screen.findByTestId('button-loading')).rejects.toThrow();
     });
   });
 
@@ -103,11 +103,32 @@ describe('WheatherCurrent', () => {
 
       render(<WheatherCurrent />);
       const button = screen.getByTestId('wheather-current');
-      fireEvent.press(button);
+      await waitFor(() => {
+        fireEvent.press(button);
+      });
+      expect(button.props.children.props.style.borderColor).toEqual(
+        Colors.ERROR,
+      );
+    });
+
+    test('Should be reset after fetching position again', async () => {
+      jest
+        .spyOn(LocationService, 'getCurrentPosition')
+        .mockRejectedValueOnce(new Error(''));
+
+      render(<WheatherCurrent />);
+      const button = screen.getByTestId('wheather-current');
+      await waitFor(() => {
+        fireEvent.press(button);
+      });
 
       await waitFor(() => {
-        expect(button).toHaveStyle({borderColor: Colors.ERROR});
+        fireEvent.press(button);
       });
+
+      expect(button.props.children.props.style.borderColor).not.toEqual(
+        Colors.ERROR,
+      );
     });
   });
 });
