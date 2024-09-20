@@ -22,7 +22,6 @@ const WeatherCurrent = () => {
         position,
       });
     } catch (err) {
-      console.log('✅ ~  error cathc getCurrentPosition:', err);
       setError(true);
     }
     setLoading(false);
